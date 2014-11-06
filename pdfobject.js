@@ -242,7 +242,7 @@ var PDFObject = function (obj){
 
     //The hash (#) prevents odd behavior in Windows
     //Append optional Adobe params for opening document
-    url = encodeURI(obj.url) + "#" + buildQueryString(pdfOpenParams);
+    url = obj.url + "#" + buildQueryString(pdfOpenParams);
     pluginTypeFound = pluginFound();
 
     this.get = function(prop){ return get(prop); };
