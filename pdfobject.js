@@ -8,6 +8,15 @@
 /*jslint browser: true, sloppy: true, white: true, plusplus: true */
 /*global ActiveXObject, window */
 
+/* UMD wrapper begin */
+;(function(root, factory) {
+  'use strict';
+
+  if (typeof module === 'object' && module.exports) module.exports = factory();
+  else if (typeof define === 'function' && define.amd) define([], factory);
+  else root.thunks = factory();
+}(typeof window === 'object' ? window : this, function() {
+
 var PDFObject = function (obj){
 
     if(!obj || !obj.url){ return false; }
@@ -252,3 +261,8 @@ var PDFObject = function (obj){
     return this;
 
 };
+
+return PDFObject;
+
+/* UMD wrapper end */
+}));
